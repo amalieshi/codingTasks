@@ -1,0 +1,23 @@
+/* Base background image styles */
+body {
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Media query for screens at 900px and below */
+@media screen and (max-width: 900px) {
+    body {
+        /* background-size: 90%; /* Resize to 90% of the original width */
+        background-position: center;
+    }
+}
+
+/* Media query for screens at 700px and below */
+@media screen and (max-width: 700px) {
+    body {
+        /* background-size: 80%; /* Resize to 80% of the original width */
+        background-position: center;
+    }
+}

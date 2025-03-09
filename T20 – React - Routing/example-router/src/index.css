@@ -1,0 +1,40 @@
+.app {
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+height: 100vh;
+}
+/*styling for the dark theme */
+.app.dark {
+background-color: black;
+color: white;
+}
+/*styling for the light theme */
+.app.light {
+background-color: white;
+color: black;
+}
+/*styling for the navigation menu*/
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+color: #fff;
+padding: 1rem;
+}
+.nav-links {
+list-style-type: none;
+display: flex;
+margin: 0;
+padding: 0;
+}
+.nav-links li {
+margin-right: 1rem;
+}
+.nav-links a {
+color: #fff;
+text-decoration: none;
+}

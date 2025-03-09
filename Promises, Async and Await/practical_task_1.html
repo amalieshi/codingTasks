@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Info</title>
+</head>
+<body>
+    <h1>Pokémon Info</h1>
+    <div id="pokemon-info">
+        <p>Name: <span id="pokemon-name"></span></p>
+        <p>Weight: <span id="pokemon-weight"></span></p>
+        <p>Ability: <span id="pokemon-ability"></span></p>
+    </div>
+
+    <script>
+        function getPokemonInfo(pokemonName) {
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}/`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('pokemon-name').textContent = data.name;
+                    document.getElementById('pokemon-weight').textContent = data.weight;
+                    document.getElementById('pokemon-ability').textContent = data.abilities[0].ability.name;
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        // Replace 'squirtle' with the name of your favorite Pokémon
+        getPokemonInfo('Charmander');
+    </script>
+</body>
+</html>
